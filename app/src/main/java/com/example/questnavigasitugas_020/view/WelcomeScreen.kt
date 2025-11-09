@@ -76,7 +76,7 @@ fun WelcomeScreen(
                     .height(50.dp),
                 shape = RoundedCornerShape(50),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(id = R.color.purple_200) // Warna ungu
+                    containerColor = colorResource(id = R.color.purple_500)
                 )
             ) {
                 Text(
