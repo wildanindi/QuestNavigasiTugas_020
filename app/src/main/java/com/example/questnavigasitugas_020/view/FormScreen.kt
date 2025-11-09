@@ -238,7 +238,45 @@ fun FormScreen(
             }
 
 
+            Spacer(modifier = Modifier.weight(1f))
 
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 32.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                OutlinedButton(
+                    onClick = onBackClicked,
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(50.dp),
+                    shape = RoundedCornerShape(12.dp),
+                ) {
+                    Text("Kembali")
+                }
+
+                Button(
+                    onClick = {
+                        val isDataValid = namaLengkap.isNotBlank() &&
+                                selectedGender.isNotBlank() &&
+                                selectedStatus.isNotBlank() &&
+                                alamat.isNotBlank()
+
+                        if (isDataValid) {
+                            showDialog = true
+                        } else {
+                            showErrorDialog = true
+                        }
+                    },
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(50.dp),
+                    shape = RoundedCornerShape(12.dp),
+                ) {
+                    Text(text = stringResource(id = R.string.submit))
+                }
+            }
         }
     }
 }
