@@ -79,7 +79,10 @@ fun WelcomeScreen(
                     containerColor = Color(0xFF8A2BE2) // Warna ungu
                 )
             ) {
-
+                Text(
+                    text = stringResource(id = R.string.Login),
+                    fontSize = 18.sp
+                )
             }
         }
     }
