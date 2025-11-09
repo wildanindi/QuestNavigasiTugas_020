@@ -71,6 +71,18 @@ fun ListScreen(
                 }
             }
         }
-    ) {
+    ) { paddingValues ->
+
+        val pesertaList = remember { dummyPesertaList }
+
+        LazyColumn(
+            modifier = Modifier
+                .padding(paddingValues)
+                .fillMaxSize(),
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+
         }
     }
+}
