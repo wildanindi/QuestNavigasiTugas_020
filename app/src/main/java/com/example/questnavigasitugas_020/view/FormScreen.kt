@@ -53,6 +53,64 @@ fun FormScreen(
                 )
             )
         }
-    ) {
+    ) { paddingValues ->
+
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = { Text("Konfirmasi Data") },
+                text = {
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text("Nama Lengkap: $namaLengkap")
+                        Text("Jenis Kelamin: $selectedGender")
+                        Text("Status Perkawinan: $selectedStatus")
+                        Text("Alamat: $alamat")
+                    }
+                },
+                confirmButton = {
+                    TextButton(
+                        onClick = {
+                            showDialog = false
+                            onSubmitClicked(namaLengkap, selectedGender, selectedStatus, alamat)
+                        }
+                    ) {
+                        Text(text = stringResource(id = R.string.submit))
+                    }
+                },
+                dismissButton = {
+                    TextButton(
+                        onClick = { showDialog = false }
+                    ) {
+                        Text(text = stringResource(id = R.string.batal))
+                    }
+                }
+            )
+        }
+
+        if (showErrorDialog) {
+            AlertDialog(
+                onDismissRequest = { showErrorDialog = false },
+                title = { Text("Validasi Gagal") },
+                text = { Text("Mohon isi data terlebih dahulu.") },
+                confirmButton = {
+                    TextButton(
+                        onClick = { showErrorDialog = false }
+                    ) {
+                        Text("OK")
+                    }
+                }
+            )
+        }
+
+        Column(
+            modifier = Modifier
+                .padding(paddingValues)
+                .padding(horizontal = 24.dp)
+                .verticalScroll(rememberScrollState())
+        ) {
+
+
+
         }
     }
+}
