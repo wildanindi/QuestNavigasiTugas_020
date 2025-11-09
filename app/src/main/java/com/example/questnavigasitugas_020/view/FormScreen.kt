@@ -163,7 +163,54 @@ fun FormScreen(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(20.dp))
 
+            Text(
+                text = "STATUS PERKAWINAN",
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Bold,
+                color = Color.Gray
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+
+            ExposedDropdownMenuBox(
+                expanded = isStatusDropdownExpanded,
+                onExpandedChange = { isStatusDropdownExpanded = !isStatusDropdownExpanded }
+            ) {
+                OutlinedTextField(
+                    value = selectedStatus,
+                    onValueChange = {},
+                    readOnly = true,
+                    placeholder = { Text("Pilih status kawin") },
+                    trailingIcon = {
+                        ExposedDropdownMenuDefaults.TrailingIcon(expanded = isStatusDropdownExpanded)
+                    },
+                    modifier = Modifier
+                        .menuAnchor()
+                        .fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White,
+                        focusedBorderColor = Color.Transparent,
+                        unfocusedBorderColor = Color.Transparent
+                    )
+                )
+                ExposedDropdownMenu(
+                    expanded = isStatusDropdownExpanded,
+                    onDismissRequest = { isStatusDropdownExpanded = false }
+                ) {
+                    statusOptions.forEach { status ->
+                        DropdownMenuItem(
+                            text = { Text(status) },
+                            onClick = {
+                                selectedStatus = status
+                                isStatusDropdownExpanded = false
+                            }
+                        )
+                    }
+                }
+            }
 
         }
     }
