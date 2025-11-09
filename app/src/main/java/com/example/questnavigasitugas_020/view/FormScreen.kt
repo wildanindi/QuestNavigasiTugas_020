@@ -211,6 +211,33 @@ fun FormScreen(
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Column {
+                Text(
+                    text = "ALAMAT",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Gray
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = { alamat = it },
+                    placeholder = { Text("Isikan alamat") },
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White,
+                        focusedBorderColor = Color.Transparent,
+                        unfocusedBorderColor = Color.Transparent
+                    ),
+                    singleLine = true
+                )
+            }
+
+
 
         }
     }
