@@ -58,6 +58,15 @@ fun WelcomeScreen(
                 contentScale = ContentScale.Fit
             )
 
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Text(
+                text = "Muhammad Wildan Indi Naufal\n20230140020",
+                fontSize = 16.sp,
+                color = Color.DarkGray,
+                textAlign = TextAlign.Center
+            )
+
 
         }
     }
