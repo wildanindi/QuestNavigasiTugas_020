@@ -45,6 +45,18 @@ fun WelcomeScreen(
                 color = Color.Gray
             )
 
+            Spacer(modifier = Modifier.weight(1f))
+
+
+
+            Image(
+                painter = painterResource(id = R.drawable.asd),
+                contentDescription = null,
+                modifier = Modifier
+                    .width(width = 300.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Fit
+            )
 
 
         }
