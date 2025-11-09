@@ -2,5 +2,8 @@
     <string name="app_name">QuestNavigasiTugas_020</string>
     <string name="welcome">Selamat Datang</string>
     <string name="Login">Masuk</string>
+    <string name="titleList">List Daftar Peserta</string>
+    <string name="btnBackList">Beranda</string>
+    <string name="btnDaftarList">Daftar</string>
 
 </resources>
