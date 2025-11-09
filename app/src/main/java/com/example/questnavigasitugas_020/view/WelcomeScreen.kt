@@ -67,7 +67,20 @@ fun WelcomeScreen(
                 textAlign = TextAlign.Center
             )
 
+            Spacer(modifier = Modifier.weight(1f))
 
+            Button(
+                onClick = onMasukClicked,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                shape = RoundedCornerShape(50),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF8A2BE2) // Warna ungu
+                )
+            ) {
+
+            }
         }
     }
 }
