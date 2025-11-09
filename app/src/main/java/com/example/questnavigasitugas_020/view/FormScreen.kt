@@ -135,6 +135,34 @@ fun FormScreen(
             }
             Spacer(modifier = Modifier.height(20.dp))
 
+            Text(
+                text = "JENIS KELAMIN",
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Bold,
+                color = Color.Gray
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                genderOptions.forEach { gender ->
+                    Row(
+                        Modifier
+                            .selectable(
+                                selected = (selectedGender == gender),
+                                onClick = { selectedGender = gender }
+                            )
+                            .padding(end = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = (selectedGender == gender),
+                            onClick = { selectedGender = gender }
+                        )
+                        Text(text = gender)
+                    }
+                }
+            }
 
 
         }
