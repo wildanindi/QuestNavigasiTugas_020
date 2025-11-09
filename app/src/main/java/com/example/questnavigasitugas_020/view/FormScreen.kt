@@ -110,6 +110,32 @@ fun FormScreen(
         ) {
 
 
+            Column {
+                Text(
+                    text = "NAMA LENGKAP",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Gray
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = namaLengkap,
+                    onValueChange = { namaLengkap = it },
+                    placeholder = { Text("Isikan nama lengkap") },
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White,
+                        focusedBorderColor = Color.Transparent,
+                        unfocusedBorderColor = Color.Transparent
+                    ),
+                    singleLine = true
+                )
+            }
+            Spacer(modifier = Modifier.height(20.dp))
+
+
 
         }
     }
