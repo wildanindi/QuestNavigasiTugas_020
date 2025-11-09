@@ -5,5 +5,9 @@
     <string name="titleList">List Daftar Peserta</string>
     <string name="btnBackList">Beranda</string>
     <string name="btnDaftarList">Daftar</string>
+    <string name="titleForm">Formulir Pendaftaran</string>
+    <string name="submit">Submit</string>
+    <string name="batal">Batal</string>
+
 
 </resources>
