@@ -48,8 +48,22 @@ fun DataApp(
                 )
             }
 
-
+            composable(route = Navigasi.List.name){
+                ListScreen (
+                    onBerandaClicked = {
+                        popBackToWelcome(navController)
+                    },
+                    onFormulirClicked = {
+                        navController.navigate(Navigasi.Form.name)
+                    }
+                )
+            }
         }
     }
 }
 
+private fun popBackToWelcome(
+    navController: NavHostController
+){
+    navController.popBackStack(route = Navigasi.Welcome.name, inclusive = false)
+}
