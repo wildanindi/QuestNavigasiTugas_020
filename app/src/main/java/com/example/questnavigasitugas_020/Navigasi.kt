@@ -1,11 +1,15 @@
 package com.example.questnavigasitugas_020
 
 
-
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-
+import com.example.questnavigasitugas_020.view.WelcomeScreen
 
 enum class Navigasi {
     Welcome,
@@ -17,4 +21,22 @@ enum class Navigasi {
 fun DataApp(
     navController: NavHostController = rememberNavController()
 ){
+    Scaffold { isiRuang->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.Welcome.name, // Layar awal
+            modifier = Modifier.padding(paddingValues = isiRuang)
+        ){
+
+            composable(route = Navigasi.Welcome.name) {
+                WelcomeScreen(
+
+                    onMasukClicked = {
+                        navController.navigate(Navigasi.List.name)
+                    }
+                )
+            }
+        }
+    }
 }
+
