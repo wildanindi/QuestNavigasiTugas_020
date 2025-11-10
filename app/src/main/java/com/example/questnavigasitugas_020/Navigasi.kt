@@ -9,6 +9,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.questnavigasitugas_020.view.FormScreen
+import com.example.questnavigasitugas_020.view.ListScreen
 import com.example.questnavigasitugas_020.view.WelcomeScreen
 
 enum class Navigasi {
@@ -36,6 +38,17 @@ fun DataApp(
                     }
                 )
             }
+
+            composable(route = Navigasi.Form.name){
+                FormScreen (
+                    onSubmitClicked = { _, _, _, _ ->
+                    },
+                    onBackClicked = {
+                        navController.navigate(Navigasi.List.name)                    }
+                )
+            }
+
+
         }
     }
 }
