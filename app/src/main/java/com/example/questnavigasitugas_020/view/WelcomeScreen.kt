@@ -28,62 +28,72 @@ import androidx.compose.ui.unit.sp
 fun WelcomeScreen(
     onMasukClicked: () -> Unit = {}
 ) {
-    Scaffold(
-        containerColor = colorResource(id = R.color.white)
-    ) { paddingValues ->
-        Column(
+
+
+        Box(
             modifier = Modifier
-                .padding(paddingValues)
                 .fillMaxSize()
-                .padding(horizontal = 32.dp, vertical = 48.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = stringResource(id = R.string.welcome),
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Gray
-            )
-
-            Spacer(modifier = Modifier.weight(1f))
-
 
 
             Image(
-                painter = painterResource(id = R.drawable.asd),
-                contentDescription = null,
-                modifier = Modifier
-                    .width(width = 300.dp)
-                    .clip(CircleShape),
-                contentScale = ContentScale.Fit
+                painter = painterResource(id = R.drawable.wall),
+                contentDescription = "Background",
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop // Crop akan mengisi layar penuh
             )
 
-            Spacer(modifier = Modifier.height(24.dp))
 
-            Text(
-                text = "Muhammad Wildan Indi Naufal\n20230140020",
-                fontSize = 16.sp,
-                color = Color.DarkGray,
-                textAlign = TextAlign.Center
-            )
-
-            Spacer(modifier = Modifier.weight(1f))
-
-            Button(
-                onClick = onMasukClicked,
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                shape = RoundedCornerShape(50),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(id = R.color.purple_500)
-                )
+                    .fillMaxSize()
+                    .padding(horizontal = 32.dp, vertical = 48.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = stringResource(id = R.string.Login),
-                    fontSize = 18.sp
+                    text = stringResource(id = R.string.welcome),
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Gray
                 )
+
+                Spacer(modifier = Modifier.weight(1f))
+
+//                Image(
+//                    painter = painterResource(id = R.drawable.asd),
+//                    contentDescription = null,
+//                    modifier = Modifier
+//                        .width(width = 300.dp)
+//                        .clip(CircleShape),
+//                    contentScale = ContentScale.Fit
+//                )
+
+                Spacer(modifier = Modifier.height(300.dp))
+
+                Text(
+                    text = "Muhammad Wildan Indi Naufal\n20230140020",
+                    fontSize = 16.sp,
+                    color = Color.White, // Pastikan warna ini kontras
+                    textAlign = TextAlign.Center
+                )
+
+                Spacer(modifier = Modifier.weight(1f))
+
+                Button(
+                    onClick = onMasukClicked,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp),
+                    shape = RoundedCornerShape(50),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(id = R.color.purple_500)
+                    )
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.Login),
+                        fontSize = 18.sp
+                    )
+                }
             }
         }
     }
-}
